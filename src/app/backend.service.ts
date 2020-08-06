@@ -6,7 +6,7 @@ import { Space } from './main/space';
   providedIn: 'root'
 })
 export class BackendService {
-  apiURL: string = 'https://api.spacexdata.com/v3/launches?limit=100';
+  apiURL: string = 'https://api.spacexdata.com/v3/launches?limit=10';
 
 constructor(private http:HttpClient) {}
 

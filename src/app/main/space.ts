@@ -121,7 +121,6 @@ export interface Timeline {
     meco?: number;
     stage_sep?: number;
     second_stage_ignition?: number;
-
     seco_1: number;
     dragon_separation?: number;
     dragon_solar_deploy?: number;
