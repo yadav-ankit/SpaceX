@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Space } from './main/space';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ constructor(private http:HttpClient) {}
 
 
 public getData () {
-    return this.http.get(this.apiURL);
+    return this.http.get<Space[]>(this.apiURL);
 }
 
 }

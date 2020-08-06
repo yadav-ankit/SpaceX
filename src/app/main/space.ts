@@ -152,7 +152,7 @@ export interface Timeline {
     seco_4?: number;
 }
 
-export interface RootObject {
+export interface Space {
     flight_number: number;
     mission_name: string;
     mission_id: string[];

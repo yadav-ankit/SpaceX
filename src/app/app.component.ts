@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BackendService } from './backend.service';
+import { Space } from './main/space';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import { BackendService } from './backend.service';
 })
 export class AppComponent {
   title = 'SpaceX';
-  someVar;
+  spaceData : Space[];
   backendService: BackendService;
   constructor(service: BackendService) {
     this.backendService = service;
@@ -19,6 +20,12 @@ export class AppComponent {
   }
 
   private callFirst() {
-    this.backendService.getData().subscribe(s => this.someVar = s);
+    this.backendService.getData().subscribe(s => {
+      this.spaceData = s;
+      console.log(this.spaceData[0]);
+      console.log(this.spaceData[0].flight_number);
+      console.log(this.spaceData[0].tentative_max_precision);
+      console.log(this.spaceData[0].launch_failure_details);
+    });
   }
 }
