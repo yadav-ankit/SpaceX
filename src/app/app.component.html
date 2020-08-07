@@ -54,7 +54,7 @@
 <!-- Toolbar -->
 <div class="content" role="main">
   <div class = "card-data">
-    <h2>Launch Year</h2><br/>
+    <h2><a (click)="ngOnInit()">Launch Year</a></h2><br/>
     <div>
       <button class="button button2" (click)="yearFilter(2005)">2005</button> <button class="button button2" (click)="yearFilter(2006)">2006</button> <br/> 
       <button  class="button button2"(click)="yearFilter(2007)">2007</button>  <button class="button button2" (click)="yearFilter(2008)">2008</button><br/> 
@@ -67,7 +67,7 @@
     </div>
     <div>
       <h3>Successfull Landing</h3>
-      <button class="button button2" (click)="launchLand(true)">True</button> <button class="button button2" (click)="launchLand(false)">False</button> <br/>
+      <button class="button button2" (click)="landFilter(true)">True</button> <button class="button button2" (click)="landFilter(false)">False</button> <br/>
     </div>
    </div>
 

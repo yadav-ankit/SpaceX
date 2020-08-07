@@ -11,11 +11,23 @@ export class AppComponent {
   title = 'SpaceX';
   spaceData : Space[];
   backendService: BackendService;
+  isYearSelected : boolean = false;
+  isLaunchSelected : boolean = false;
+  isLandingSelected : boolean = false;
+  year : string;
+  launched : string;
+  landed : string;
   constructor(service: BackendService) {
     this.backendService = service;
   }
 
   ngOnInit() {
+    this.isYearSelected = false;
+    this.isLandingSelected = false;
+    this.isLaunchSelected = false;
+    this.year = null;
+    this.launched = null;
+    this.landed = null;
     this.callFirst();
   }
 
@@ -27,19 +39,25 @@ export class AppComponent {
   }
 
   public yearFilter(given){
-    this.backendService.getData(undefined,undefined,given).subscribe(s => {
+    this.isYearSelected = !this.isYearSelected;
+    this.year = given;
+    this.backendService.getData(this.launched,this.landed,this.year).subscribe(s => {
       this.spaceData = s;
     });
   }
 
   public launchFilter(given){
-    this.backendService.getData(given,undefined,undefined).subscribe(s => {
+    this.isLaunchSelected = !this.isLaunchSelected;
+    this.launched = given;
+    this.backendService.getData(this.launched,this.landed,this.year).subscribe(s => {
       this.spaceData = s;
     });
   }
 
   public landFilter(given){
-    this.backendService.getData(undefined,given,undefined).subscribe(s => {
+    this.isLandingSelected = !this.isLandingSelected;
+    this.landed = given;
+    this.backendService.getData(this.launched,this.landed,this.year).subscribe(s => {
       this.spaceData = s;
     });
   }

@@ -7,27 +7,27 @@ import { isNullOrUndefined } from 'util';
   providedIn: 'root'
 })
 export class BackendService {
-  apiURL: string = 'https://api.spacexdata.com/v3/launches?limit=10';
+  apiURL: string = 'https://api.spacexdata.com/v3/launches?limit=100';
 
-constructor(private http:HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-public loadData(){
-  return this.http.get<Space[]>(this.apiURL);
-}
-
-public getData (launch_success? : string, land_success?: string,launch_year? : string ) {
-    
-if(isNullOrUndefined(launch_success) && isNullOrUndefined(land_success)){
-  return this.http.get<Space[]>(this.apiURL + '&launch_success=true&land_success=true&launch_year=' + launch_year);
-}
-  if(!isNullOrUndefined(launch_success)){
-    return this.http.get<Space[]>(this.apiURL + '&launch_success=' + launch_success);
-  }else if(land_success != undefined){
-    return this.http.get<Space[]>(this.apiURL + '&launch_success=true' + '&land_success=' + land_success);
-  }else if(isNullOrUndefined(launch_year)){
-    return this.http.get<Space[]>(this.apiURL + '&launch_success=true&land_success=true');
+  public loadData() {
+    return this.http.get<Space[]>(this.apiURL);
   }
- 
-}
+
+  public getData(launch_success?: string, land_success?: string, launch_year?: string) {
+   let url = this.apiURL;
+    if (!isNullOrUndefined(launch_success)) {
+      url = url + '&launch_success=' + launch_success;
+    }
+    if (!isNullOrUndefined(land_success)) {
+      url = url + '&land_success=' + land_success;
+    }
+    if (!isNullOrUndefined(launch_year)) {
+      url = url + '&launch_year=' + launch_year;
+    }
+    return this.http.get<Space[]>(url);
+
+  }
 
 }
