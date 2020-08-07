@@ -9,14 +9,14 @@ import { Space } from './main/space';
 })
 export class AppComponent {
   title = 'SpaceX';
-  spaceData : Space[];
+  spaceData: Space[];
   backendService: BackendService;
-  isYearSelected : boolean = false;
-  isLaunchSelected : boolean = false;
-  isLandingSelected : boolean = false;
-  year : string;
-  launched : string;
-  landed : string;
+  isYearSelected: boolean = false;
+  isLaunchSelected: boolean = false;
+  isLandingSelected: boolean = false;
+  year: string;
+  launched: string;
+  landed: string;
   constructor(service: BackendService) {
     this.backendService = service;
   }
@@ -38,26 +38,35 @@ export class AppComponent {
     });
   }
 
-  public yearFilter(given){
+  public yearFilter(given) {
     this.isYearSelected = !this.isYearSelected;
     this.year = given;
-    this.backendService.getData(this.launched,this.landed,this.year).subscribe(s => {
+    if (this.isYearSelected == false) {
+      this.year = null;
+    }
+    this.backendService.getData(this.launched, this.landed, this.year).subscribe(s => {
       this.spaceData = s;
     });
   }
 
-  public launchFilter(given){
+  public launchFilter(given) {
     this.isLaunchSelected = !this.isLaunchSelected;
     this.launched = given;
-    this.backendService.getData(this.launched,this.landed,this.year).subscribe(s => {
+    if (this.isLaunchSelected == false) {
+      this.launched = null;
+    }
+    this.backendService.getData(this.launched, this.landed, this.year).subscribe(s => {
       this.spaceData = s;
     });
   }
 
-  public landFilter(given){
+  public landFilter(given) {
     this.isLandingSelected = !this.isLandingSelected;
     this.landed = given;
-    this.backendService.getData(this.launched,this.landed,this.year).subscribe(s => {
+    if (this.isLandingSelected == false) {
+      this.landed = null;
+    }
+    this.backendService.getData(this.launched, this.landed, this.year).subscribe(s => {
       this.spaceData = s;
     });
   }
