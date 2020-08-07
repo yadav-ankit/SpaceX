@@ -6,3 +6,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+# Features Added
+
+1: 3 Filters of Date , Launch and Landed which can be used together with all possible combinations.
+
+2: Clicking on Launch Year will bring back to the orignal page.
+
+3: A single Page Angular app (SPA) with no URL changes.
+
