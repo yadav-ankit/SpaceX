@@ -16,5 +16,6 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 4: Button is highlighed when you select a filter.
 
+5: The App is deployed on AWS with url http://spacexankitangular.s3-website.ap-south-1.amazonaws.com/
 
 
