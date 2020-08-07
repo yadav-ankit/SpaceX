@@ -14,5 +14,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 3: A single Page Angular app (SPA) with no URL changes.
 
+4: Button is highlighed when you select a filter.
+
 
 
