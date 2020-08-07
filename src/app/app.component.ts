@@ -20,12 +20,27 @@ export class AppComponent {
   }
 
   private callFirst() {
-    this.backendService.getData().subscribe(s => {
+    this.backendService.loadData().subscribe(s => {
       this.spaceData = s;
-      console.log(this.spaceData[0]);
-      console.log(this.spaceData[0].flight_number);
-      console.log(this.spaceData[0].tentative_max_precision);
-      console.log(this.spaceData[0].launch_failure_details);
+      console.log(this.spaceData[0].rocket.first_stage.cores[0].land_success);
+    });
+  }
+
+  public yearFilter(given){
+    this.backendService.getData(undefined,undefined,given).subscribe(s => {
+      this.spaceData = s;
+    });
+  }
+
+  public launchFilter(given){
+    this.backendService.getData(given,undefined,undefined).subscribe(s => {
+      this.spaceData = s;
+    });
+  }
+
+  public landFilter(given){
+    this.backendService.getData(undefined,given,undefined).subscribe(s => {
+      this.spaceData = s;
     });
   }
 }
