@@ -53,14 +53,13 @@
     text-align: center;
     vertical-align: middle;
     display: flex;
-    /* 2. display flex to the rescue */
     flex-direction: row;
   }
 </style>
 <!-- Toolbar -->
 <div class="content" role="main">
+  <h2><a (click)="ngOnInit()">Launch Year</a></h2>
   <div class="card-data">
-    <h2><a (click)="ngOnInit()">Launch Year</a></h2><br />
     <div>
       <button class="button button2" [ngClass]="{'highlight': isYearSelected  && year == 2005}"
         (click)="yearFilter(2005)">2005</button>
@@ -79,18 +78,24 @@
       <button class="button button2" [ngClass]="{'highlight': isYearSelected  && year == 2015}"
         (click)="yearFilter(2015)">2015</button> <br />
     </div>
+  </div>
+  <h2>Successfull Launch</h2>
+  <div class="card-data">
+   
     <div>
-      <h3>Successfull Launch</h3>
       <button class="button button2" [ngClass]="{'highlight': isLaunchSelected && launched == true}"
         (click)="launchFilter(true)">True</button>
       <button class="button button2" [ngClass]="{'highlight': isLaunchSelected && launched == false}"
         (click)="launchFilter(false)">False</button> <br />
     </div>
+  </div>
+  <h2>Successfull Landing</h2>
+  <div class="card-data">
+    
     <div>
-      <h3>Successfull Landing</h3>
-      <button class="button button2" [ngClass]="{'highlight': isLaunchSelected && landed == true}"
+      <button class="button button2" [ngClass]="{'highlight': isLandingSelected && landed == true}"
         (click)="landFilter(true)">True</button>
-      <button class="button button2" [ngClass]="{'highlight': isLaunchSelected && landed == false}"
+      <button class="button button2" [ngClass]="{'highlight': isLandingSelected && landed == false}"
         (click)="landFilter(false)">False</button> <br />
     </div>
   </div>
