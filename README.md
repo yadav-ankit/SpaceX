@@ -20,4 +20,6 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 6: The app is compatible with Both Desktop and Phone Resolution
 
+7: Performance of this URL is tested on https://gtmetrix.com/  and screenshots are attached.
+
 
