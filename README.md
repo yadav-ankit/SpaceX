@@ -37,5 +37,5 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 6: Then Customised the app in the CSS part to display in all different resolutions(Desktop and Mobile)
 
-7: Finally created the Production ready app using ng build --prod Deployed the Angular App on Amazon Web Services (AWS - S3)
+7: Finally created the Production ready app using ng build --prod and Deployed the Angular App on Amazon Web Services (AWS - S3)
 
