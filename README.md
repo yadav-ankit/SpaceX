@@ -23,3 +23,19 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 7: Performance of this URL is tested on https://gtmetrix.com/  and screenshots are attached.
 
 
+# Step By Step Approach for building this application
+
+1: Created a new angular project and linked with a new Git Repository.
+
+2: Created a service and custom Interfaces to  get and map the sample response from the SpaceX API and display data on console.
+
+3: Then created Component and integrated the service with it.
+
+4: Next I added Designing part (CSS) to build the design as mentioned.
+
+5: Made Filters and wrote all possible boundary cases to get combinations of filtered response.
+
+6: Then Customised the app in the CSS part to display in all different resolutions(Desktop and Mobile)
+
+7: Finally Deployed the Angular App on Amazon Web Services (AWS - S3)
+
