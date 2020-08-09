@@ -23,7 +23,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 7: Performance of this URL is tested on https://gtmetrix.com/  and screenshots are attached.
 
 
-# Step By Step Approach for building this application
+# My Step By Step Approach for building this application
 
 1: Created a new angular project and linked with a new Git Repository.
 
